@@ -194,8 +194,18 @@
             var target = this.hash,
                 $target = $(target);
             
-                e.preventDefault();
-                e.stopPropagation();
+            // Only proceed if we have a valid hash target and the element exists
+            if (!target || $target.length === 0) {
+                return; // Allow default link behavior for non-hash links
+            }
+            
+            e.preventDefault();
+            e.stopPropagation();
+
+            // Check if target element has offset (is visible/positioned)
+            if (!$target.offset()) {
+                return; // Allow default link behavior if element not found
+            }
 
             $('html, body').stop().animate({
                 'scrollTop': $target.offset().top
