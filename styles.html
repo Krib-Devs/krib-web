@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Krib App - Find Hostels Near Your University in Ghana</title>
+    <meta
+      name="description"
+      content="Krib is a mobile app that helps Ghanaian university students discover, compare, and book safe, affordable hostels near their campus."
+    />
+    <meta name="author" content="Krib Team" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/vendor.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/krib-colors.css" />
+
+    <script src="js/modernizr.js"></script>
+    <script src="js/pace.min.js"></script>
+
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+  </head>
+
+  <body id="top">
+    <div id="preloader">
+      <div id="loader" class="dots-jump">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+
+    <header class="s-header">
+      <div class="row">
+        <div class="header-logo">
+          <a class="site-logo" href="index.html">
+            <img src="images/krib.png" alt="Krib" />
+          </a>
+        </div>
+
+        <nav class="header-nav-wrap">
+          <ul class="header-main-nav">
+            <li class="current">
+              <a class="smoothscroll" href="#home" title="intro">Home</a>
+            </li>
+            <li>
+              <a class="smoothscroll" href="#about" title="about">Why Krib?</a>
+            </li>
+            <li>
+              <a class="smoothscroll" href="#features" title="features"
+                >Features</a
+              >
+            </li>
+            <li>
+              <a class="smoothscroll" href="#pricing" title="pricing"
+                >Pricing</a
+              >
+            </li>
+            <li>
+              <a class="smoothscroll" href="#download" title="download"
+                >Download</a
+              >
+            </li>
+          </ul>
+
+          <div class="header-cta">
+            <a
+              href="#download"
+              class="btn btn--primary header-cta__btn smoothscroll"
+              >Get The App</a
+            >
+          </div>
+        </nav>
+        <a class="header-menu-toggle" href="#"><span>Menu</span></a>
+      </div>
+    </header>
+    <section
+      id="home"
+      class="s-home target-section"
+      data-parallax="scroll"
+      data-image-src="images/hero-bg2.png"
+      data-natural-width="3000"
+      data-natural-height="2000"
+      data-position-y="center"
+    >
+      <div class="shadow-overlay"></div>
+
+      <div class="home-content">
+        <div class="row home-content__main">
+          <div class="home-content__left">
+            <h1>Krib — Your App to Find Hostels Near Ghanaian Universities</h1>
+
+            <h3>
+              The easiest way for Ghanaian university students to discover,
+              compare, and secure safe, affordable hostels near campus. Say
+              goodbye to accommodation stress.
+            </h3>
+
+            <div class="home-content__btn-wrap">
+              <a
+                href="#download"
+                class="btn btn--primary home-content__btn smoothscroll"
+              >
+                Find Your Hostel Now
+              </a>
+            </div>
+          </div>
+          <div class="home-content__right">
+            <img
+              src="images/mock-krib.png"
+              srcset="images/mock-krib.png, images/mock-krib.png"
+            />
+          </div>
+        </div>
+              </div>
+      <a href="#about" class="home-scroll smoothscroll">
+        <span class="home-scroll__text">Discover</span>
+        <span class="home-scroll__icon"></span>
+      </a>
+    </section>
+    <section id="about" class="s-about target-section">
+      <div class="row section-header has-bottom-sep" data-aos="fade-up">
+        <div class="col-full">
+          <h1 class="display-1">
+            The Student's App for Safe, Affordable Hostels in Ghana.
+          </h1>
+          <p class="lead">
+            Krib is the dedicated app connecting students with verified hostels
+            close to campuses across Ghana. Easily browse listings, view
+            detailed photos, compare prices, and message landlords directly to
+            secure your place.
+          </p>
+        </div>
+              </div>
+      <div class="row wide about-desc" data-aos="fade-up">
+        <div class="col-full slick-slider about-desc__slider">
+          <div class="about-desc__slide">
+            <h3 class="item-title">Verified Listings.</h3>
+
+            <p>
+              Every hostel on Krib is physically verified by our local team and
+              confirmed with the landlord, ensuring you only view legitimate and
+              reliable accommodation options.
+            </p>
+          </div>
+                    <div class="about-desc__slide">
+            <h3 class="item-title">Proximity Search.</h3>
+
+            <p>
+              Stop wasting time! Filter hostels by exact distance to your
+              university gate, ensuring a short and safe walk to class every
+              morning.
+            </p>
+          </div>
+                    <div class="about-desc__slide">
+            <h3 class="item-title">Direct Contact.</h3>
+
+            <p>
+              Communicate with hostel owners and managers directly through the
+              app to ask questions and arrange viewings without a middleman.
+            </p>
+                      </div>
+
+          <div class="about-desc__slide">
+            <h3 class="item-title">Price Comparison.</h3>
+
+            <p>
+              Easily compare yearly prices, room types (1-in-a-room to
+              4-in-a-room), and facilities side-by-side to find the best deal
+              for your budget.
+            </p>
+          </div>
+                  </div>
+              </div>
+          </section>
+            <section id="about-how" class="s-about-how">
+      <div class="row">
+        <div class="col-full video-bg" data-aos="fade-up">
+          <div class="shadow-overlay"></div>
+
+          <a
+            class="btn-video"
+            href="https://player.vimeo.com/video/14592941?color=00a650&title=0&byline=0&portrait=0"
+            data-lity
+          >
+            <span class="video-icon"></span>
+          </a>
+
+          <div class="stats">
+            <div class="item-stats">
+              <span class="item-stats__num"> 3.1M </span>
+              <span class="item-stats__title"> Hostel Searches </span>
+            </div>
+                        <div class="item-stats">
+              <span class="item-stats__num"> 24K </span>
+              <span class="item-stats__title"> Hostels Secured </span>
+            </div>
+                      </div>
+        </div>
+              </div>
+
+      <div class="row process-wrap">
+        <h2 class="display-2 text-center" data-aos="fade-up">
+          How Krib Works in 4 Simple Steps
+        </h2>
+
+        <div class="process" data-aos="fade-up">
+          <div class="process__steps block-1-2 block-tab-full group">
+            <div class="col-block step">
+              <h3 class="item-title">1. Search</h3>
+              <p>
+                Download the app, select your university, and search thousands
+                of vetted hostel rooms using location, price range, and
+                amenities filters.
+              </p>
+            </div>
+
+            <div class="col-block step">
+              <h3 class="item-title">2. Compare</h3>
+              <p>
+                View high-quality photos, read honest student reviews, and
+                compare multiple hostel options side-by-side to find your
+                perfect fit.
+              </p>
+            </div>
+
+            <div class="col-block step">
+              <h3 class="item-title">3. Connect</h3>
+              <p>
+                Use the secure in-app chat to message the landlord or hostel
+                manager directly to ask questions or schedule a viewing without
+                a broker.
+              </p>
+            </div>
+
+            <div class="col-block step">
+              <h3 class="item-title">4. Book</h3>
+              <p>
+                Once satisfied, finalize your agreement and move-in! Krib makes
+                securing your safe campus accommodation simple and stress-free.
+              </p>
+            </div>
+          </div>
+        </div>
+              </div>
+          </section>
+            <section id="features" class="s-features target-section">
+      <div class="row section-header has-bottom-sep" data-aos="fade-up">
+        <div class="col-full">
+          <h1 class="display-1">
+            Designed for Ghanaian Students, Loaded with Essential Features.
+          </h1>
+          <p class="lead">
+            Krib takes the guesswork out of finding student accommodation. From
+            verifying properties to direct communication, we have you covered.
+          </p>
+        </div>
+              </div>
+      <div class="row features block-1-3 block-m-1-2">
+        <div class="col-block item-feature" data-aos="fade-up">
+          <div class="item-feature__icon">
+            <i class="icon-search"></i>
+          </div>
+          <div class="item-feature__text">
+            <h3 class="item-title">Advanced Search Filters</h3>
+            <p>
+              Filter hostels by proximity to campus, hostel type (private vs.
+              mixed), amenities like Wi-Fi or laundry, and specific budget
+              requirements.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-block item-feature" data-aos="fade-up">
+          <div class="item-feature__icon">
+            <i class="icon-map-pin"></i>
+                      </div>
+          <div class="item-feature__text">
+            <h3 class="item-title">GPS Location Mapping</h3>
+            <p>
+              See the exact location of the hostel on a map relative to your
+              university, helping you gauge travel time and neighborhood safety
+              accurately.
+            </p>
+          </div>
+                  </div>
+
+        <div class="col-block item-feature" data-aos="fade-up">
+          <div class="item-feature__icon">
+            <i class="icon-lock"></i>
+                      </div>
+          <div class="item-feature__text">
+            <h3 class="item-title">Verified Landlords</h3>
+            <p>
+              We verify the identity and ownership of every landlord and hostel
+              manager on the platform to prevent scams and ensure a trustworthy
+              experience.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-block item-feature" data-aos="fade-up">
+          <div class="item-feature__icon">
+            <i class="icon-star"></i>
+                      </div>
+          <div class="item-feature__text">
+            <h3 class="item-title">Real Student Reviews</h3>
+            <p>
+              Get unbiased insight into life in a specific hostel by reading
+              verified reviews and ratings left by past and current student
+              occupants.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-block item-feature" data-aos="fade-up">
+          <div class="item-feature__icon">
+            <i class="icon-chat"></i>
+                      </div>
+          <div class="item-feature__text">
+            <h3 class="item-title">In-App Chat Messaging</h3>
+            <p>
+              Instantly message verified landlords to clarify details, negotiate
+              rent, or schedule a physical viewing directly, all within the app.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-block item-feature" data-aos="fade-up">
+          <div class="item-feature__icon">
+            <i class="icon-wallet"></i>
+                      </div>
+          <div class="item-feature__text">
+            <h3 class="item-title">Payment Tracking</h3>
+            <p>
+              Keep track of rental due dates, deposit payments, and receipt
+              documentation securely, helping you manage your finances easily.
+            </p>
+          </div>
+        </div>
+      </div>
+            <div class="testimonials-wrap" data-aos="fade-up">
+        <div class="row">
+          <div class="col-full testimonials-header">
+            <h2 class="display-2">What Students Say About Krib.</h2>
+          </div>
+        </div>
+
+        <div class="row testimonials">
+          <div class="col-full slick-slider testimonials__slider">
+            <div class="testimonials__slide">
+              <img
+                src="images/avatars/user-03.jpg"
+                alt="Author image"
+                class="testimonials__avatar"
+              />
+
+              <p>
+                Before Krib, finding a hostel was a nightmare of scammers and
+                confusing prices. I found a safe place near KNUST in less than a
+                week. This app is essential for new students!
+              </p>
+
+              <div class="testimonials__author">
+                <span class="testimonials__name">Aisha Mensah</span>
+                <a href="#0" class="testimonials__link">@aishamensah</a>
+              </div>
+            </div>
+                        <div class="testimonials__slide">
+              <img
+                src="images/avatars/user-05.jpg"
+                alt="Author image"
+                class="testimonials__avatar"
+              />
+
+              <p>
+                The proximity search feature saved me so much time. Being able
+                to compare prices and amenities across multiple hostels
+                instantly is a game-changer. Highly recommend to all Legon
+                students.
+              </p>
+
+              <div class="testimonials__author">
+                <span class="testimonials__name">Kofi Adjei</span>
+                <a href="#0" class="testimonials__link">@kofiadjei</a>
+              </div>
+            </div>
+                        <div class="testimonials__slide">
+              <img
+                src="images/avatars/user-01.jpg"
+                alt="Author image"
+                class="testimonials__avatar"
+              />
+
+              <p>
+                I felt much safer knowing the landlords were verified. The
+                in-app chat made securing my room stress-free. Krib is making
+                hostel hunting simple across Ghana.
+              </p>
+
+              <div class="testimonials__author">
+                <span class="testimonials__name">Ama Daniels</span>
+                <a href="#0" class="testimonials__link">@amadaniels</a>
+              </div>
+            </div>
+                      </div>
+                  </div>
+              </div>
+          </section>
+            <section id="download" class="s-download target-section">
+      <div class="row section-header align-center" data-aos="fade-up">
+        <div class="col-full">
+          <h1 class="display-1">
+            Download the Krib App: Your hostel search ends here.
+          </h1>
+          <p class="lead">
+            Ready to find your safe, affordable, and convenient student
+            accommodation? Download Krib for free and join thousands of Ghanaian
+            students who trust us for their housing needs.
+          </p>
+        </div>
+      </div>
+            <div class="row">
+        <div class="col-full text-center">
+          <ul class="download-badges" data-aos="fade-up">
+                            <li>
+                <a href="#" title="Coming Soon" class="badge-appstore coming-soon-btn">App Store</a>
+            </li>
+            <li>
+              <a href="#" title="Coming Soon" class="badge-googleplay coming-soon-btn">Play Store</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div
+        class="row download-bottom-image hidden"
+        style="display: none"
+        data-aos="fade-up"
+        disabled
+      >
+        <img
+          disabled
+          src="images/app-screen-1400.png"
+          srcset="
+            images/app-screen-600.png   600w,
+            images/app-screen-1400.png 1400w,
+            images/app-screen-2800.png 2800w
+          "
+          sizes="(max-width: 2800px) 100vw, 2800px"
+          alt="App Screenshots"
+        />
+      </div>
+    </section>
+            <footer class="s-footer footer">
+      <div class="row section-header align-center">
+        <div class="col-full">
+          <h1 class="display-1">
+            Stay Connected for Housing Tips and Updates.
+          </h1>
+          <p class="lead">
+            Subscribe to our newsletter for new hostel listings, safety guides,
+            and special offers for students.
+          </p>
+        </div>
+      </div>
+            <div class="row footer__top">
+        <div class="col-full footer__subscribe end">
+          <div class="subscribe-form">
+            <form id="mc-form" class="group" novalidate="true">
+              <input
+                type="email"
+                value=""
+                name="EMAIL"
+                class="email"
+                id="mc-email"
+                placeholder="Student Email Address"
+                required=""
+              />
+
+              <input type="submit" name="subscribe" value="Sign Up" />
+
+              <label for="mc-email" class="subscribe-message"></label>
+            </form>
+          </div>
+        </div>
+      </div>
+            <div class="row footer__bottom">
+        <div class="footer__about col-five tab-full left">
+          <h4>About Krib.</h4>
+
+          <p>
+            Krib is the essential mobile app built for students in Ghana to
+            easily discover and secure hostel accommodation near their
+            universities. Our mission is to make the campus housing search
+            simple, safe, and transparent for every student.
+          </p>
+
+          <ul class="footer__social">
+            <li>
+              <a href="#0"
+                ><i class="fab fa-facebook-f" aria-hidden="true"></i
+              ></a>
+            </li>
+            <li>
+              <a href="#0"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+            </li>
+            <li>
+              <a href="#0"
+                ><i class="fab fa-instagram" aria-hidden="true"></i
+              ></a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="col-five md-seven tab-full right end">
+          <div class="row">
+            <div class="footer__site-links col-five mob-full">
+              <h4>Site links.</h4>
+
+              <ul class="footer__site-links">
+                <li><a href="#home" class="smoothscroll">Home</a></li>
+                <li><a href="#about" class="smoothscroll">Why Krib?</a></li>
+                <li><a href="#features" class="smoothscroll">Features</a></li>
+                <li><a href="#pricing" class="smoothscroll">Pricing</a></li>
+                <li><a href="#download" class="smoothscroll">Download</a></li>
+                <li><a href="#0">Hostel Owners</a></li>
+              </ul>
+            </div>
+
+            <div class="footer__contact col-seven mob-full">
+              <h4>Contact Us.</h4>
+
+              <p>
+                Phone: (+233) 544137795 <br />
+                Fax: (+233) 30 000 0000
+              </p>
+              <p>
+                Need help or have a question? Contact us at: <br />
+                <a href="mailto:support@krib.com" class="footer__mail-link"
+                  >support@krib.com</a
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-full ss-copyright">
+          <span>&copy; Copyright Krib 2025</span>
+        </div>
+      </div>
+            <div class="go-top">
+        <a class="smoothscroll" title="Back to Top" href="#top"></a>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+        // Use jQuery (since you included it) to handle the click event
+        $(document).ready(function() {
+            $('.coming-soon-btn').on('click', function(e) {
+                // Prevent the default action (which is to navigate to "#" and cause a slight scroll jump)
+                e.preventDefault(); 
+                
+                // Show the SweetAlert pop-up
+                Swal.fire({
+                    title: 'Coming Soon!',
+                    text: 'The Krib App is currently in final development. Please check back soon or sign up for our newsletter for launch announcements!',
+                    icon: 'info', // Use a standard icon like 'info', 'warning', or 'success'
+                    confirmButtonText: 'Got It',
+                    confirmButtonColor: '#00a650' // Use a color that matches your Krib theme
+                });
+            });
+        });
+    </script>
+
+  </body>
+</html>

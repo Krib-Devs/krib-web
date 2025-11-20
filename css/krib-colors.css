@@ -1,0 +1,99 @@
+:root {
+  --krib-brand: #FF400D;
+  --krib-brand-dark: #E63A0C;
+  --krib-brand-rgba: rgba(255,64,13,0.8);
+}
+
+/* Override purple-ish theme color to Krib brand */
+a {
+  color: var(--krib-brand) !important;
+}
+
+/* Primary buttons */
+.btn.btn--primary,
+button.btn--primary,
+input[type="submit"].btn--primary,
+input[type="reset"].btn--primary,
+input[type="button"].btn--primary {
+  background: var(--krib-brand) !important;
+  border-color: var(--krib-brand) !important;
+  color: #ffffff !important;
+}
+
+.btn.btn--primary:hover,
+button.btn--primary:hover,
+input[type="submit"].btn--primary:hover,
+input[type="reset"].btn--primary:hover,
+input[type="button"].btn--primary:hover,
+.btn.btn--primary:focus,
+button.btn--primary:focus {
+  background: var(--krib-brand-dark) !important;
+  border-color: var(--krib-brand-dark) !important;
+}
+
+/* Progress / loader / pace */
+.pace .pace-progress {
+  background: var(--krib-brand) !important;
+}
+
+#loader > div {
+  background: var(--krib-brand) !important;
+}
+
+.skill-bars li .progress {
+  background: var(--krib-brand) !important;
+}
+
+.slick-slider .slick-dots li.slick-active button,
+.slick-slider .slick-dots li:hover button {
+  background: var(--krib-brand) !important;
+}
+
+/* Quotes, bullets and accents */
+ul.disc li::before,
+.pull-quote:before,
+.pull-quote:after,
+blockquote:before {
+  background: var(--krib-brand) !important;
+  color: var(--krib-brand) !important;
+}
+
+dt { color: var(--krib-brand) !important; }
+.stats-tabs li a:hover { color: var(--krib-brand) !important; }
+
+/* Autofill and focused inputs */
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+  -webkit-text-fill-color: var(--krib-brand) !important;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  box-shadow: 0 0 5px var(--krib-brand-rgba) !important;
+  border: 1px solid var(--krib-brand) !important;
+}
+
+/* lity / modal close icon */
+.lity-close:hover::before,
+.lity-close:hover::after,
+.lity-close:focus::before,
+.lity-close:focus::after,
+.lity-close:active::before,
+.lity-close:active::after,
+.lity-close:visited::before,
+.lity-close:visited::after {
+  background-color: var(--krib-brand) !important;
+}
+
+/* Generic replacements where purple was previously used */
+.pull-quote:before, .pull-quote:after { color: var(--krib-brand) !important; }
+
+/* Fallback for any other purple backgrounds/text we missed */
+/* targets exact hex strings used in original CSS */
+/* These use attribute selectors to keep specificity low but still override */
+[style*="#5b4f96"] { color: var(--krib-brand) !important; }
+[style*="#5b4f96"] { background-color: var(--krib-brand) !important; }
+
+/* End of overrides */
