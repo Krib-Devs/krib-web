@@ -9,7 +9,13 @@
     
     var cfg = {
         scrollDuration : 800, // smoothscroll duration
-        mailChimpURL   : 'https://facebook.us8.list-manage.com/subscribe/post?u=cdb7b577e41181934ed6a6a44&amp;id=e6957d85dc'   // mailchimp url
+        mailChimpURL   : 'https://facebook.us8.list-manage.com/subscribe/post?u=cdb7b577e41181934ed6a6a44&amp;id=e6957d85dc',   // mailchimp url (deprecated)
+        // Discord webhook URL - To get your webhook URL:
+        // 1. Go to your Discord server settings
+        // 2. Navigate to Integrations > Webhooks
+        // 3. Create a new webhook or use an existing one
+        // 4. Copy the webhook URL and paste it below
+        discordWebhookURL : 'https://discord.com/api/webhooks/1441192876208951336/r9jpQXjkn1jCCwMItPt15cGU3WrFGvYLPsq0f_9kttsk01dIKeLFTJxL2ey2SWYYKGtc' // Example: 'https://discord.com/api/webhooks/YOUR_WEBHOOK_ID/YOUR_WEBHOOK_TOKEN'
     },
 
     $WIN = $(window);
@@ -270,35 +276,116 @@
     };
 
 
-   /* AjaxChimp
+   /* Discord Webhook Subscription
     * ------------------------------------------------------ */
-    var ssAjaxChimp = function() {
+    var ssDiscordSubscribe = function() {
         
-        $('#mc-form').ajaxChimp({
-            language: 'es',
-            url: cfg.mailChimpURL
+        $('#mc-form').on('submit', function(e) {
+            e.preventDefault();
+            
+            var form = $(this);
+            var emailInput = form.find('input[type="email"]');
+            var email = emailInput.val().trim();
+            var messageLabel = form.find('.subscribe-message');
+            
+            // Basic email validation
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!email || !emailRegex.test(email)) {
+                messageLabel.html('<i class="fas fa-exclamation-triangle"></i> Please enter a valid email address.')
+                    .removeClass('valid')
+                    .addClass('error')
+                    .show();
+                emailInput.addClass('error');
+                return false;
+            }
+            
+            // Check if Discord webhook URL is configured
+            if (!cfg.discordWebhookURL || cfg.discordWebhookURL === '') {
+                messageLabel.html('<i class="fas fa-exclamation-triangle"></i> Discord webhook not configured. Please contact administrator.')
+                    .removeClass('valid')
+                    .addClass('error')
+                    .show();
+                return false;
+            }
+            
+            // Show submitting message
+            messageLabel.html('<i class="fas fa-spinner fa-spin"></i> Submitting...')
+                .removeClass('error valid')
+                .show();
+            emailInput.removeClass('error');
+            
+            // Prepare Discord webhook payload
+            var timestamp = new Date().toISOString();
+            var discordPayload = {
+                embeds: [{
+                    title: "📧 New Newsletter Subscription",
+                    description: "A new user has subscribed to the Krib newsletter!",
+                    color: 0x00a650, // Krib green color
+                    fields: [
+                        {
+                            name: "Email Address",
+                            value: email,
+                            inline: false
+                        },
+                        {
+                            name: "Subscription Date",
+                            value: new Date().toLocaleString(),
+                            inline: false
+                        }
+                    ],
+                    footer: {
+                        text: "Krib App Newsletter"
+                    },
+                    timestamp: timestamp
+                }]
+            };
+            
+            // Send to Discord webhook
+            $.ajax({
+                url: cfg.discordWebhookURL,
+                type: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify(discordPayload),
+                success: function() {
+                    messageLabel.html('<i class="fas fa-check"></i> Thank you for subscribing! We\'ll keep you updated.')
+                        .removeClass('error')
+                        .addClass('valid')
+                        .show();
+                    emailInput.removeClass('error').addClass('valid').val('');
+                    
+                    // Show success modal
+                    if (typeof Swal !== 'undefined') {
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Thank You!',
+                            html: '<p style="font-size: 1.6rem; line-height: 1.8; margin-bottom: 1.5rem;">Thank you for subscribing to our newsletter!</p><p style="font-size: 1.6rem; line-height: 1.8;">We\'ll send you updates about new hostel listings, safety guides, and special offers for students.</p>',
+                            confirmButtonText: 'Awesome!',
+                            confirmButtonColor: '#FF400D',
+                            background: '#ffffff',
+                            color: '#000000',
+                            width: '600px',
+                            padding: '3rem',
+                            customClass: {
+                                popup: 'krib-swal-popup',
+                                title: 'krib-swal-title',
+                                content: 'krib-swal-content',
+                                confirmButton: 'krib-swal-button'
+                            }
+                        });
+                    }
+                },
+                error: function(xhr, status, error) {
+                    console.error('Discord webhook error:', error);
+                    messageLabel.html('<i class="fas fa-exclamation-triangle"></i> Something went wrong. Please try again later.')
+                        .removeClass('valid')
+                        .addClass('error')
+                        .show();
+                    emailInput.addClass('error');
+                }
+            });
+            
+            return false;
         });
-
-        // Mailchimp translation
-        //
-        //  Defaults:
-        //	 'submit': 'Submitting...',
-        //  0: 'We have sent you a confirmation email',
-        //  1: 'Please enter a value',
-        //  2: 'An email address must contain a single @',
-        //  3: 'The domain portion of the email address is invalid (the portion after the @: )',
-        //  4: 'The username portion of the email address is invalid (the portion before the @: )',
-        //  5: 'This email address looks fake or invalid. Please enter a real email address'
-
-        $.ajaxChimp.translations.es = {
-            'submit': 'Submitting...',
-            0: '<i class="fas fa-check"></i> We have sent you a confirmation email',
-            1: '<i class="fas fa-exclamation-triangle"></i> You must enter a valid e-mail address.',
-            2: '<i class="fas fa-exclamation-triangle"></i> E-mail address is not valid.',
-            3: '<i class="fas fa-exclamation-triangle"></i> E-mail address is not valid.',
-            4: '<i class="fas fa-exclamation-triangle"></i> E-mail address is not valid.',
-            5: '<i class="fas fa-exclamation-triangle"></i> E-mail address is not valid.'
-        }
     };
 
 
@@ -315,7 +402,7 @@
         ssAlertBoxes();
         ssAOS();
         ssBackToTop();
-        ssAjaxChimp();
+        ssDiscordSubscribe();
 
     })();
 

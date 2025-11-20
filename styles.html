@@ -110,7 +110,7 @@
               goodbye to accommodation stress.
             </h3>
 
-            <div class="home-content__btn-wrap">
+            <div class="home-content__btn-wrap d-flex justify-content-center">
               <a
                 href="#download"
                 class="btn btn--primary home-content__btn smoothscroll"
@@ -575,6 +575,7 @@
     <script>
         // Use jQuery (since you included it) to handle the click event
         $(document).ready(function() {
+            // Coming soon modal for app store badges
             $('.coming-soon-btn').on('click', function(e) {
                 // Prevent the default action (which is to navigate to "#" and cause a slight scroll jump)
                 e.preventDefault(); 
@@ -583,13 +584,90 @@
                 Swal.fire({
                     title: 'Coming Soon!',
                     text: 'The Krib App is currently in final development. Please check back soon or sign up for our newsletter for launch announcements!',
-                    icon: 'info', // Use a standard icon like 'info', 'warning', or 'success'
+                    icon: 'info',
                     confirmButtonText: 'Got It',
-                    confirmButtonColor: '#00a650' // Use a color that matches your Krib theme
+                    confirmButtonColor: '#FF400D',
+                    background: '#ffffff',
+                    color: '#000000',
+                    customClass: {
+                        popup: 'krib-swal-popup',
+                        title: 'krib-swal-title',
+                        content: 'krib-swal-content',
+                        confirmButton: 'krib-swal-button'
+                    }
                 });
+            });
+            
+            // Thank you modal for APK download
+            $('a[href*="application-3a7af113-1ea4-4992-96ca-4c38af632126.apk"]').click(function(e) {
+                // Don't prevent default - let the download proceed
+                // Show modal after a short delay to allow download to start
+                setTimeout(function() {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Thank You for Downloading!',
+                        html: '<p style="font-size: 1.6rem; line-height: 1.8; margin-bottom: 1.5rem;">We appreciate you downloading the Krib app!</p><p style="font-size: 1.6rem; line-height: 1.8; margin-bottom: 1.5rem;">Once installed, you can start finding safe and affordable hostels near your university.</p><p style="font-size: 1.8rem; font-weight: 600; color: #FF400D; margin-top: 2rem;"><strong>Happy house hunting! 🏠</strong></p>',
+                        confirmButtonText: 'Get Started!',
+                        confirmButtonColor: '#FF400D',
+                        showCloseButton: true,
+                        background: '#ffffff',
+                        color: '#000000',
+                        width: '600px',
+                        padding: '3rem',
+                        customClass: {
+                            popup: 'krib-swal-popup',
+                            title: 'krib-swal-title',
+                            content: 'krib-swal-content',
+                            confirmButton: 'krib-swal-button'
+                        }
+                    });
+                }, 500);
             });
         });
     </script>
 
-  </body>
+    <style>
+      /* Custom SweetAlert2 styling to match Krib theme */
+      .krib-swal-popup {
+        border-radius: 8px !important;
+        font-family: "Nunito Sans", sans-serif !important;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2) !important;
+      }
+      
+      .krib-swal-title {
+        font-size: 2.4rem !important;
+        font-weight: 700 !important;
+        color: #000000 !important;
+        margin-bottom: 1.5rem !important;
+      }
+      
+      .krib-swal-content {
+        font-size: 1.6rem !important;
+        line-height: 1.6 !important;
+        color: #333333 !important;
+      }
+      
+      .krib-swal-button {
+        font-size: 1.6rem !important;
+        font-weight: 600 !important;
+        padding: 1.2rem 3rem !important;
+        border-radius: 4px !important;
+        transition: all 0.3s ease !important;
+      }
+      
+      .krib-swal-button:hover {
+        transform: translateY(-2px) !important;
+        box-shadow: 0 4px 12px rgba(255, 64, 13, 0.3) !important;
+      }
+      
+      .swal2-icon {
+        margin-bottom: 2rem !important;
+      }
+      
+      .swal2-html-container {
+        margin: 1.5rem 0 !important;
+      }
+    </style>
+
+  </body>
 </html>
